@@ -31,8 +31,7 @@ module Webpush
     attr_reader :curve
 
     def initialize
-      @curve = OpenSSL::PKey::EC.new('prime256v1')
-      @curve.generate_key
+      @curve = OpenSSL::PKey::EC.generate('prime256v1')
     end
 
     # Retrieve the encoded elliptic curve public key for VAPID protocol
